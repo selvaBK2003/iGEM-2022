@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>TEAM</title>
+
+
+      <!-- custom stylesheet -->
+      <link rel="stylesheet" href="../static/team.css">
+
+      <!-- font-awesome icons -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <!-- Jquery CDN -->
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+      <!-- Plugin  -->
+      <script src="../pages/js/team.js"></script>
+      <script src="../pages/js/team(reflection).js"></script>
+</head>
+<body class="human-practices">
+  <!-- Main -->
+  <main>
+    <section class="mast">
+        <!-- Background Image -->
+        <figure class="mast__bg">
+        <style>* .mast__bg
+        {background-image: url(https://spartez.com/img/asset/bWFpbi9ibG9nLzBkOTlhYjUyLWRhZTEtNGFjMy1hNGE5LTkyM2E0YmUyODYwYS5wbmc=?w=1440&h=800&fit=crop&q=90);}</style></figure>
+        <!-- Header -->
+        <header class="mast__header">
+          <!-- Title -->
+          <h1 class="mast__title js-words">
+              TEAM
+          </h1> 
+          <hr class="sep"/>
+          <!-- Caption -->
+          <p class="mast__text js-letters">
+            “Remember, teamwork begins by building trust. 
+            And the only way to do that is to overcome 
+            our need for invulnerability.”
+          </p>
+          <div id="scroll-down-animation">
+            <span class="mouse">
+              <span class="move"></span>
+            </span>
+            
+          </div>
+        </header>
+    </section>
+  </main>
+<body>
+      <div id="wrap">
+            <div id="showcase">
+                  <img src="../static/New folder/hero.jpg" alt="Alison" class="cloud9-item">
+                  <img src="../static/New folder/hero.jpg" alt="Adam" class="cloud9-item">
+                  <img src="../static/New folder/hero.jpg" alt="Amy" class="cloud9-item">
+                  <img src="../static/New folder/hero.jpg" alt="Blake" class="cloud9-item">
+                  <img src="../static/New folder/hero.jpg" alt="Angela" class="cloud9-item">
+                  <img src="../static/New folder/hero.jpg" alt="Claire" class="cloud9-item">
+            </div>
+
+            <p id="item-title">&nbsp;</p>
+
+            <div class="nav noselect">
+                  <button class="left"><i class="fa fa-arrow-left" aria-label="arrow left"></i></button>
+                  <button class="right"><i class="fa fa-arrow-right" aria-label="arrow right"></i></button>
+            </div>
+
+      </div>
+
+      <script type="text/javascript">
+
+      $(function() {
+            var showcase = $("#showcase")
+
+            showcase.Cloud9Carousel( {
+                  yPos: 42,
+                  yRadius: 48,
+                  mirrorOptions: {
+                        gap: 12,
+                        height: 0.2
+                  },
+                  buttonLeft: $(".nav > .left"),
+                  buttonRight: $(".nav > .right"),
+                  autoPlay: true,
+                  bringToFront: true,
+
+                  onRendered: showcaseUpdated,
+                  onLoaded: function() {
+                        showcase.css( 'visibility', 'visible' )
+                        showcase.css( 'display', 'none')
+                        showcase.fadeIn( 1500 )
+                  }
+            })
+
+            function showcaseUpdated( showcase ) {
+                  var title = $("#item-title").html(
+                        $(showcase.nearestItem()).attr( 'alt' )
+                  )
+
+                  var c = Math.cos((showcase.floatIndex() % 1) * 2 * Math.PI)
+                  title.css('opacity', 0.5 + (0.5 * c))
+            }
+
+            $('.nav > button').click( function( e ) {
+                  var b = $(e.target).addClass( 'down' )
+                  setTimeout( function() { b.removeClass( 'down' ) }, 80)
+            } )
+
+            $(document).keydown( function( e ) {
+                  switch( e.keyCode ) {
+                        case 37:
+                        $('.nav > .left').click()
+                        break
+
+                        case 39:
+                        $('.nav > .right').click()
+                  }
+            })
+      })
+
+      </script>
+      <script type="text/javascript">
+        var Spanizer = function() {
+    var t;
+    return {
+        settings: {
+            letters: $(".js-letters"),
+            words: $(".js-words")
+        },
+        init: function() {
+            t = this.settings, this.bindEvents()
+        },
+        bindEvents: function() {
+            Spanizer.letters(), Spanizer.words()
+        },
+        letters: function() {
+            t.letters.html(function(t, n) {
+                var e = $.trim(n).split(""),
+                    i = [];
+                return e.forEach(function(t) {
+                    " " !== t ? i.push("<span>" + t + "</span>") : i.push("<span>&nbsp;</span>")
+                }), i.join("")
+            })
+        },
+        words: function() {
+            t.words.html(function(t, n) {
+                var e = n.split(" "),
+                    i = [];
+                return "<span>" + e.join("</span> <span>") + "</span>"
+            })
+        }
+    }
+}();
+
+// Init Spanizer
+Spanizer.init();
+      </script>
+      
+            
+        
+        
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>

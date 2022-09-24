@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IGEM-IISER_Tirupati-2022</title>
+  <link href="../static/safety.css" rel="stylesheet">
+
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" > </script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js " > </script>
+
+<body class="human-practices">
+<!-- Main -->
+<main>
+  <section class="mast">
+      <!-- Background Image -->
+      <figure class="mast__bg">
+      <style>* .mast__bg
+      {background-image: url(https://modernabiotech.com/wp-content/uploads/2021/03/why-it-is-important-to-follow-lab-safety-rules.jpg);}</style></figure>
+      <!-- Header -->
+      <header class="mast__header">
+        <!-- Title -->
+        <h1 class="mast__title js-words">
+            Safety
+        </h1> 
+        <hr class="sep"/>
+        <!-- Caption -->
+        <p class="mast__text js-letters">
+          “Safety is not an Experiment,
+          it's a Commitment.”
+        </p>
+        <div id="scroll-down-animation">
+          <span class="mouse">
+            <span class="move"></span>
+          </span>
+          
+        </div>
+      </header>
+  </section>
+</main>
+<script type="text/javascript">
+  var Spanizer = function() {
+var t;
+return {
+  settings: {
+      letters: $(".js-letters"),
+      words: $(".js-words")
+  },
+  init: function() {
+      t = this.settings, this.bindEvents()
+  },
+  bindEvents: function() {
+      Spanizer.letters(), Spanizer.words()
+  },
+  letters: function() {
+      t.letters.html(function(t, n) {
+          var e = $.trim(n).split(""),
+              i = [];
+          return e.forEach(function(t) {
+              " " !== t ? i.push("<span>" + t + "</span>") : i.push("<span>&nbsp;</span>")
+          }), i.join("")
+      })
+  },
+  words: function() {
+      t.words.html(function(t, n) {
+          var e = n.split(" "),
+              i = [];
+          return "<span>" + e.join("</span> <span>") + "</span>"
+      })
+  }
+}
+}();
+
+// Init Spanizer
+Spanizer.init();
+</script>
+
+      
+  
+  
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>

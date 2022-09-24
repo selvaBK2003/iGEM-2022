@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Card Expansion Effect - Demo 1</title>
+	<meta name="description" content="Card Expansion Effect with SVG clipPath" />
+	<meta name="keywords" content="clipPath, svg, effect, layout, expansion, images, grid, polygon" />
+	<meta name="author" content="Claudio Calautti for Codrops" />
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../static/model.css" />
+	
+	<!--[if IE]>
+	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script>
+	if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+		var root = document.getElementsByTagName('html')[0];
+		root.setAttribute('class', 'ff');
+	};
+	</script>
+</head>
+<main>
+    <section class="mast">
+        <!-- Background Image -->
+        <figure class="mast__bg">
+        <style>* .mast__bg
+        {background-image: url(https://thumbs.dreamstime.com/b/men-sitting-different-poses-white-lines-black-background-concept-vector-illustration-various-men-sitting-men-sitting-175160741.jpg);}</style></figure>
+        <!-- Header -->
+        <header class="mast__header">
+          <!-- Title -->
+          <h1 class="mast__title js-words">
+              Model
+          </h1> 
+          <hr class="sep"/>
+          <!-- Caption -->
+          <p class="mast__text js-letters">
+            "The mathematical sciences particularly exhibit order symmetry and limitations; 
+            and these are the greatest forms of the beautiful." 
+          </p>
+          <div id="scroll-down-animation">
+            <span class="mouse">
+              <span class="move"></span>
+            </span>
+            
+          </div>
+        </header>
+    </section>
+  </main>
+
+		<div class="content">
+			<!-- trianglify pattern container -->
+			<div class="pattern pattern--hidden"></div>
+			<!-- cards -->
+			<div class="wrapper">
+				<div class="card">
+					<div class="card__container card__container--closed">
+						<svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
+							<defs>
+								<clipPath id="clipPath1">
+									<!-- r = 992 = hyp = Math.sqrt(960*960+250*250) -->
+									<circle class="clip" cx="960" cy="250" r="992"></circle>
+								</clipPath>
+							</defs>
+							<image clip-path="url(#clipPath1)" width="1920" height="500" xlink:href="img/a.jpg"></image>
+						</svg>
+						<div class="card__content">
+							<i class="card__btn-close fa fa-times"></i>
+							<div class="card__caption">
+								<h2 class="card__title">Tristan and Isolde</h2>
+								<p class="card__subtitle">A modern day love story</p>
+							</div>
+							<div class="card__copy">
+								<div class="meta">
+									<img class="meta__avatar" src="img/authors/1.png" alt="author01" />
+									<span class="meta__author">Gerry Sutherland</span>
+									<span class="meta__date">06/19/2015</span>
+								</div>
+								<p>Business model canvas bootstrapping deployment startup. In A/B testing pivot niche market alpha conversion startup down monetization partnership business-to-consumer success for investor mass market business-to-business.</p>
+								<p>Release creative social proof influencer iPad crowdsource gamification learning curve network effects monetization. Gamification business plan mass market www.discoverartisans.com direct mailing ecosystem seed round sales long tail vesting period.</p>
+								<p>Product management ramen bootstrapping seed round venture holy grail technology backing partner network entrepreneur beta marketing value proposition. Android stealth conversion scrum project network effects. Creative alpha long tail conversion stealth growth hacking iteration investor A/B testing prototype customer. Startup www.discoverartisans.com direct mailing launch party partnership market ramen metrics focus value proposition.</p>
+								<p>Stock infrastructure seed round sales paradigm shift technology user experience focus gamification. Partnership metrics business plan stealth business-to-business. Deployment graphical user interface monetization. Twitter incubator scrum project entrepreneur branding burn rate ramen backing paradigm shift virality crowdsource.</p>
+								<p>Social proof MVP ecosystem. Ramen launch party pitch deployment stealth. Vesting period MVP equity. Focus creative partnership founders iteration agile development infographic.</p>
+								<p>Low hanging fruit burn rate innovator user experience niche market A/B testing creative launch party product management release. Www.discoverartisans.com influencer business model canvas user experience gamification paradigm shift startup research &amp; development iPad agile development. Strategy incubator infographic success marketing buzz A/B testing responsive web design. Traction research &amp; development pitch seed money venture niche market accelerator network effects.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card__container card__container--closed">
+						<svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
+							<defs>
+								<clipPath id="clipPath2">
+									<!-- r = 992 = hyp = Math.sqrt(960*960+250*250) -->
+									<circle class="clip" cx="960" cy="250" r="992"></circle>
+								</clipPath>
+							</defs>
+							<image clip-path="url(#clipPath2)" width="1920" height="500" xlink:href="img/b.jpg"></image>
+						</svg>
+						<div class="card__content">
+							<i class="card__btn-close fa fa-times"></i>
+							<div class="card__caption">
+								<h2 class="card__title">About Helen</h2>
+								<p class="card__subtitle">A story about a woman</p>
+							</div>
+							<div class="card__copy">
+								<div class="meta">
+									<img class="meta__avatar" src="img/authors/2.png" alt="author02" />
+									<span class="meta__author">Frank Posterius</span>
+									<span class="meta__date">06/16/2015</span>
+								</div>
+								<p>Business model canvas bootstrapping deployment startup. In A/B testing pivot niche market alpha conversion startup down monetization partnership business-to-consumer success for investor mass market business-to-business.</p>
+								<p>Release creative social proof influencer iPad crowdsource gamification learning curve network effects monetization. Gamification business plan mass market www.discoverartisans.com direct mailing ecosystem seed round sales long tail vesting period.</p>
+								<p>Product management ramen bootstrapping seed round venture holy grail technology backing partner network entrepreneur beta marketing value proposition. Android stealth conversion scrum project network effects. Creative alpha long tail conversion stealth growth hacking iteration investor A/B testing prototype customer. Startup www.discoverartisans.com direct mailing launch party partnership market ramen metrics focus value proposition.</p>
+								<p>Stock infrastructure seed round sales paradigm shift technology user experience focus gamification. Partnership metrics business plan stealth business-to-business. Deployment graphical user interface monetization. Twitter incubator scrum project entrepreneur branding burn rate ramen backing paradigm shift virality crowdsource.</p>
+								<p>Social proof MVP ecosystem. Ramen launch party pitch deployment stealth. Vesting period MVP equity. Focus creative partnership founders iteration agile development infographic.</p>
+								<p>Low hanging fruit burn rate innovator user experience niche market A/B testing creative launch party product management release. Www.discoverartisans.com influencer business model canvas user experience gamification paradigm shift startup research &amp; development iPad agile development. Strategy incubator infographic success marketing buzz A/B testing responsive web design. Traction research &amp; development pitch seed money venture niche market accelerator network effects.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card__container card__container--closed">
+						<svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
+							<defs>
+								<clipPath id="clipPath3">
+									<!-- r = 992 = hyp = Math.sqrt(960*960+250*250) -->
+									<circle class="clip" cx="960" cy="250" r="992"></circle>
+								</clipPath>
+							</defs>
+							<image clip-path="url(#clipPath3)" width="1920" height="500" xlink:href="img/c.jpg"></image>
+						</svg>
+						<div class="card__content">
+							<i class="card__btn-close fa fa-times"></i>
+							<div class="card__caption">
+								<h2 class="card__title">A mild winter</h2>
+								<p class="card__subtitle">Helen's view on wells</p>
+							</div>
+							<div class="card__copy">
+								<div class="meta">
+									<img class="meta__avatar" src="img/authors/3.png" alt="author03" />
+									<span class="meta__author">Sarah Lester</span>
+									<span class="meta__date">06/16/2015</span>
+								</div>
+								<p>Business model canvas bootstrapping deployment startup. In A/B testing pivot niche market alpha conversion startup down monetization partnership business-to-consumer success for investor mass market business-to-business.</p>
+								<p>Release creative social proof influencer iPad crowdsource gamification learning curve network effects monetization. Gamification business plan mass market www.discoverartisans.com direct mailing ecosystem seed round sales long tail vesting period.</p>
+								<p>Product management ramen bootstrapping seed round venture holy grail technology backing partner network entrepreneur beta marketing value proposition. Android stealth conversion scrum project network effects. Creative alpha long tail conversion stealth growth hacking iteration investor A/B testing prototype customer. Startup www.discoverartisans.com direct mailing launch party partnership market ramen metrics focus value proposition.</p>
+								<p>Stock infrastructure seed round sales paradigm shift technology user experience focus gamification. Partnership metrics business plan stealth business-to-business. Deployment graphical user interface monetization. Twitter incubator scrum project entrepreneur branding burn rate ramen backing paradigm shift virality crowdsource.</p>
+								<p>Social proof MVP ecosystem. Ramen launch party pitch deployment stealth. Vesting period MVP equity. Focus creative partnership founders iteration agile development infographic.</p>
+								<p>Low hanging fruit burn rate innovator user experience niche market A/B testing creative launch party product management release. Www.discoverartisans.com influencer business model canvas user experience gamification paradigm shift startup research &amp; development iPad agile development. Strategy incubator infographic success marketing buzz A/B testing responsive web design. Traction research &amp; development pitch seed money venture niche market accelerator network effects.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card__container card__container--closed">
+						<svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
+							<defs>
+								<clipPath id="clipPath4">
+									<!-- r = 992 = hyp = Math.sqrt(960*960+250*250) -->
+									<circle class="clip" cx="960" cy="250" r="992"></circle>
+								</clipPath>
+							</defs>
+							<image clip-path="url(#clipPath4)" width="1920" height="500" xlink:href="img/d.jpg"></image>
+						</svg>
+						<div class="card__content">
+							<i class="card__btn-close fa fa-times"></i>
+							<div class="card__caption">
+								<h2 class="card__title">Food sources</h2>
+								<p class="card__subtitle">What will we eat in 30 years?</p>
+							</div>
+							<div class="card__copy">
+								<div class="meta">
+									<img class="meta__avatar" src="img/authors/4.png" alt="author04" />
+									<span class="meta__author">Lena Bestofos</span>
+									<span class="meta__date">06/14/2015</span>
+								</div>
+								<p>Business model canvas bootstrapping deployment startup. In A/B testing pivot niche market alpha conversion startup down monetization partnership business-to-consumer success for investor mass market business-to-business.</p>
+								<p>Release creative social proof influencer iPad crowdsource gamification learning curve network effects monetization. Gamification business plan mass market www.discoverartisans.com direct mailing ecosystem seed round sales long tail vesting period.</p>
+								<p>Product management ramen bootstrapping seed round venture holy grail technology backing partner network entrepreneur beta marketing value proposition. Android stealth conversion scrum project network effects. Creative alpha long tail conversion stealth growth hacking iteration investor A/B testing prototype customer. Startup www.discoverartisans.com direct mailing launch party partnership market ramen metrics focus value proposition.</p>
+								<p>Stock infrastructure seed round sales paradigm shift technology user experience focus gamification. Partnership metrics business plan stealth business-to-business. Deployment graphical user interface monetization. Twitter incubator scrum project entrepreneur branding burn rate ramen backing paradigm shift virality crowdsource.</p>
+								<p>Social proof MVP ecosystem. Ramen launch party pitch deployment stealth. Vesting period MVP equity. Focus creative partnership founders iteration agile development infographic.</p>
+								<p>Low hanging fruit burn rate innovator user experience niche market A/B testing creative launch party product management release. Www.discoverartisans.com influencer business model canvas user experience gamification paradigm shift startup research &amp; development iPad agile development. Strategy incubator infographic success marketing buzz A/B testing responsive web design. Traction research &amp; development pitch seed money venture niche market accelerator network effects.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card__container card__container--closed">
+						<svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
+							<defs>
+								<clipPath id="clipPath5">
+									<!-- r = 992 = hyp = Math.sqrt(960*960+250*250) -->
+									<circle class="clip" cx="960" cy="250" r="992"></circle>
+								</clipPath>
+							</defs>
+							<image clip-path="url(#clipPath5)" width="1920" height="500" xlink:href="img/e.jpg"></image>
+						</svg>
+						<div class="card__content">
+							<i class="card__btn-close fa fa-times"></i>
+							<div class="card__caption">
+								<h2 class="card__title">Swimming in the ocean</h2>
+								<p class="card__subtitle">A Makrel's story</p>
+							</div>
+							<div class="card__copy">
+								<div class="meta">
+									<img class="meta__avatar" src="img/authors/5.png" alt="author05" />
+									<span class="meta__author">Michaela Walters</span>
+									<span class="meta__date">06/11/2015</span>
+								</div>
+								<p>Business model canvas bootstrapping deployment startup. In A/B testing pivot niche market alpha conversion startup down monetization partnership business-to-consumer success for investor mass market business-to-business.</p>
+								<p>Release creative social proof influencer iPad crowdsource gamification learning curve network effects monetization. Gamification business plan mass market www.discoverartisans.com direct mailing ecosystem seed round sales long tail vesting period.</p>
+								<p>Product management ramen bootstrapping seed round venture holy grail technology backing partner network entrepreneur beta marketing value proposition. Android stealth conversion scrum project network effects. Creative alpha long tail conversion stealth growth hacking iteration investor A/B testing prototype customer. Startup www.discoverartisans.com direct mailing launch party partnership market ramen metrics focus value proposition.</p>
+								<p>Stock infrastructure seed round sales paradigm shift technology user experience focus gamification. Partnership metrics business plan stealth business-to-business. Deployment graphical user interface monetization. Twitter incubator scrum project entrepreneur branding burn rate ramen backing paradigm shift virality crowdsource.</p>
+								<p>Social proof MVP ecosystem. Ramen launch party pitch deployment stealth. Vesting period MVP equity. Focus creative partnership founders iteration agile development infographic.</p>
+								<p>Low hanging fruit burn rate innovator user experience niche market A/B testing creative launch party product management release. Www.discoverartisans.com influencer business model canvas user experience gamification paradigm shift startup research &amp; development iPad agile development. Strategy incubator infographic success marketing buzz A/B testing responsive web design. Traction research &amp; development pitch seed money venture niche market accelerator network effects.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card__container card__container--closed">
+						<svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
+							<defs>
+								<clipPath id="clipPath6">
+									<!-- r = 992 = hyp = Math.sqrt(960*960+250*250) -->
+									<circle class="clip" cx="960" cy="250" r="992"></circle>
+								</clipPath>
+							</defs>
+							<image clip-path="url(#clipPath6)" width="1920" height="500" xlink:href="img/f.jpg"></image>
+						</svg>
+						<div class="card__content">
+							<i class="card__btn-close fa fa-times"></i>
+							<div class="card__caption">
+								<h2 class="card__title">Freedom Fighters</h2>
+								<p class="card__subtitle">When it's too hot to think</p>
+							</div>
+							<div class="card__copy">
+								<div class="meta">
+									<img class="meta__avatar" src="img/authors/6.png" alt="author06" />
+									<span class="meta__author">Tom Goldman</span>
+									<span class="meta__date">06/10/2015</span>
+								</div>
+								<p>Business model canvas bootstrapping deployment startup. In A/B testing pivot niche market alpha conversion startup down monetization partnership business-to-consumer success for investor mass market business-to-business.</p>
+								<p>Release creative social proof influencer iPad crowdsource gamification learning curve network effects monetization. Gamification business plan mass market www.discoverartisans.com direct mailing ecosystem seed round sales long tail vesting period.</p>
+								<p>Product management ramen bootstrapping seed round venture holy grail technology backing partner network entrepreneur beta marketing value proposition. Android stealth conversion scrum project network effects. Creative alpha long tail conversion stealth growth hacking iteration investor A/B testing prototype customer. Startup www.discoverartisans.com direct mailing launch party partnership market ramen metrics focus value proposition.</p>
+								<p>Stock infrastructure seed round sales paradigm shift technology user experience focus gamification. Partnership metrics business plan stealth business-to-business. Deployment graphical user interface monetization. Twitter incubator scrum project entrepreneur branding burn rate ramen backing paradigm shift virality crowdsource.</p>
+								<p>Social proof MVP ecosystem. Ramen launch party pitch deployment stealth. Vesting period MVP equity. Focus creative partnership founders iteration agile development infographic.</p>
+								<p>Low hanging fruit burn rate innovator user experience niche market A/B testing creative launch party product management release. Www.discoverartisans.com influencer business model canvas user experience gamification paradigm shift startup research &amp; development iPad agile development. Strategy incubator infographic success marketing buzz A/B testing responsive web design. Traction research &amp; development pitch seed money venture niche market accelerator network effects.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /cards -->
+		</div><!-- /content -->
+		<!-- Related demos -->
+		
+	<!-- /container -->
+    <script type="text/javascript">
+        'use strict';
+
+/**
+ * Demo.
+ */
+var demo = (function(window, undefined) {
+
+  /**
+   * Enum of CSS selectors.
+   */
+  var SELECTORS = {
+    pattern: '.pattern',
+    card: '.card',
+    cardImage: '.card__image',
+    cardClose: '.card__btn-close',
+  };
+
+  /**
+   * Enum of CSS classes.
+   */
+  var CLASSES = {
+    patternHidden: 'pattern--hidden',
+    polygon: 'polygon',
+    polygonHidden: 'polygon--hidden'
+  };
+
+  /**
+   * Map of svg paths and points.
+   */
+  var polygonMap = {
+    paths: null,
+    points: null
+  };
+
+  /**
+   * Container of Card instances.
+   */
+  var layout = {};
+
+  /**
+   * Initialise demo.
+   */
+  function init() {
+
+    // For options see: https://github.com/qrohlf/Trianglify
+    var pattern = Trianglify({
+      width: window.innerWidth,
+      height: window.innerHeight,
+      cell_size: 90,
+      variance: 1,
+      stroke_width: 0.6,
+      color_function : function(x, y) {
+        return '#de6551';
+      }
+    }).svg(); // Render as SVG.
+
+    _mapPolygons(pattern);
+
+    _bindCards();
+  };
+
+  /**
+   * Store path elements, map coordinates and sizes.
+   * @param {Element} pattern The SVG Element generated with Trianglify.
+   * @private
+   */
+  function _mapPolygons(pattern) {
+
+    // Append SVG to pattern container.
+    $(SELECTORS.pattern).append(pattern);
+
+    // Convert nodelist to array,
+    // Used `.childNodes` because IE doesn't support `.children` on SVG.
+    polygonMap.paths = [].slice.call(pattern.childNodes);
+
+    polygonMap.points = [];
+
+    polygonMap.paths.forEach(function(polygon) {
+
+      // Hide polygons by adding CSS classes to each svg path (used attrs because of IE).
+      $(polygon).attr('class', CLASSES.polygon + ' ' + CLASSES.polygonHidden);
+
+      var rect = polygon.getBoundingClientRect();
+
+      var point = {
+        x: rect.left + rect.width / 2,
+        y: rect.top + rect.height / 2
+      };
+
+      polygonMap.points.push(point);
+    });
+
+    // All polygons are hidden now, display the pattern container.
+    $(SELECTORS.pattern).removeClass(CLASSES.patternHidden);
+  };
+
+  /**
+   * Bind Card elements.
+   * @private
+   */
+  function _bindCards() {
+
+    var elements = $(SELECTORS.card);
+
+    $.each(elements, function(card, i) {
+
+      var instance = new Card(i, card);
+
+      layout[i] = {
+        card: instance
+      };
+
+      var cardImage = $(card).find(SELECTORS.cardImage);
+      var cardClose = $(card).find(SELECTORS.cardClose);
+
+      $(cardImage).on('click', _playSequence.bind(this, true, i));
+      $(cardClose).on('click', _playSequence.bind(this, false, i));
+    });
+  };
+
+  /**
+   * Create a sequence for the open or close animation and play.
+   * @param {boolean} isOpenClick Flag to detect when it's a click to open.
+   * @param {number} id The id of the clicked card.
+   * @param {Event} e The event object.
+   * @private
+   *
+   */
+  function _playSequence(isOpenClick, id, e) {
+
+    var card = layout[id].card;
+
+    // Prevent when card already open and user click on image.
+    if (card.isOpen && isOpenClick) return;
+
+    // Create timeline for the whole sequence.
+    var sequence = new TimelineLite({paused: true});
+
+    var tweenOtherCards = _showHideOtherCards(id);
+
+    if (!card.isOpen) {
+      // Open sequence.
+
+      sequence.add(tweenOtherCards);
+      sequence.add(card.openCard(_onCardMove), 0);
+
+    } else {
+      // Close sequence.
+
+      var closeCard = card.closeCard();
+      var position = closeCard.duration() * 0.8; // 80% of close card tween.
+
+      sequence.add(closeCard);
+      sequence.add(tweenOtherCards, position);
+    }
+
+    sequence.play();
+  };
+
+  /**
+   * Show/Hide all other cards.
+   * @param {number} id The id of the clcked card to be avoided.
+   * @private
+   */
+  function _showHideOtherCards(id) {
+
+    var TL = new TimelineLite;
+
+    var selectedCard = layout[id].card;
+
+    for (var i in layout) {
+
+      var card = layout[i].card;
+
+      // When called with `openCard`.
+      if (card.id !== id && !selectedCard.isOpen) {
+        TL.add(card.hideCard(), 0);
+      }
+
+      // When called with `closeCard`.
+      if (card.id !== id && selectedCard.isOpen) {
+        TL.add(card.showCard(), 0);
+      }
+    }
+
+    return TL;
+  };
+
+  /**
+   * Callback to be executed on Tween update, whatever a polygon
+   * falls into a circular area defined by the card width the path's
+   * CSS class will change accordingly.
+   * @param {Object} track The card sizes and position during the floating.
+   * @private
+   */
+  function _onCardMove(track) {
+
+    var radius = track.width / 2;
+
+    var center = {
+      x: track.x,
+      y: track.y
+    };
+
+    polygonMap.points.forEach(function(point, i) {
+
+      if (_detectPointInCircle(point, radius, center)) {
+        $(polygonMap.paths[i]).attr('class', CLASSES.polygon);
+      } else {
+        $(polygonMap.paths[i]).attr('class', CLASSES.polygon + ' ' + CLASSES.polygonHidden);
+      }
+    });
+  }
+
+  /**
+   * Detect if a point is inside a circle area.
+   * @private
+   */
+  function _detectPointInCircle(point, radius, center) {
+
+    var xp = point.x;
+    var yp = point.y;
+
+    var xc = center.x;
+    var yc = center.y;
+
+    var d = radius * radius;
+
+    var isInside = Math.pow(xp - xc, 2) + Math.pow(yp - yc, 2) <= d;
+
+    return isInside;
+  };
+
+  // Expose methods.
+  return {
+    init: init
+  };
+
+})(window);
+
+// Kickstart Demo.
+window.onload = demo.init;
+    </script>
+    <script type="text/javascript">
+        'use strict';
+
+/**
+ * Card.
+ */
+var Card = (function(window, undefined) {
+
+  /**
+   * Enum of CSS selectors.
+   */
+  var SELECTORS = {
+    container: '.card__container',
+    content: '.card__content',
+    clip: '.clip'
+  };
+
+  /**
+   * Enum of CSS classes.
+   */
+  var CLASSES = {
+    containerClosed: 'card__container--closed',
+    bodyHidden: 'body--hidden'
+  };
+
+  /**
+   * Card.
+   */
+  function Card(id, el) {
+
+    this.id = id;
+
+    this._el = el;
+
+    // Get elements.
+    this._container = $(this._el).find(SELECTORS.container)[0];
+    this._clip = $(this._el).find(SELECTORS.clip)[0];
+    this._content = $(this._el).find(SELECTORS.content)[0];
+
+    this.isOpen = false;
+
+    this._TL = null;
+  };
+
+  /**
+   * Open card.
+   * @param {Function} callback The callback `onCardMove`.
+   */
+  Card.prototype.openCard = function(callback) {
+
+    this._TL = new TimelineLite;
+
+    var slideContentDown = this._slideContentDown();
+    var clipImageIn = this._clipImageIn();
+    var floatContainer = this._floatContainer(callback);
+    var clipImageOut = this._clipImageOut();
+    var slideContentUp = this._slideContentUp();
+
+    // Compose sequence and use duration to overlap tweens.
+    this._TL.add(slideContentDown);
+    this._TL.add(clipImageIn, 0);
+    this._TL.add(floatContainer, '-=' + clipImageIn.duration() * 0.6);
+    this._TL.add(clipImageOut, '-=' + floatContainer.duration() * 0.3);
+    this._TL.add(slideContentUp, '-=' + clipImageOut.duration() * 0.6);
+    
+
+    this.isOpen = true;
+
+    return this._TL;
+  };
+
+  /**
+   * Slide content down.
+   * @private
+   */
+  Card.prototype._slideContentDown = function() {
+
+    var tween = TweenLite.to(this._content, 0.8, {
+      y: window.innerHeight,
+      ease: Expo.easeInOut
+    });
+
+    return tween;
+  };
+
+  /**
+   * Clip image in.
+   * @private
+   */
+  Card.prototype._clipImageIn = function() {
+
+    // Circle.
+    var tween = TweenLite.to(this._clip, 0.8, {
+      attr: {
+        r: 60
+      },
+      ease: Expo.easeInOut
+    });
+
+    return tween;
+  };
+
+  /**
+   * Float card to final position.
+   * @param {Function} callback The callback `onCardMove`.
+   * @private
+   */
+  Card.prototype._floatContainer = function(callback) {
+
+    $(document.body).addClass(CLASSES.bodyHidden);
+
+    var TL = new TimelineLite;
+
+    var rect = this._container.getBoundingClientRect();
+    var windowW = window.innerWidth;
+
+    var track = {
+      width: 0,
+      x: rect.left + (rect.width / 2),
+      y: rect.top + (rect.height / 2),
+    };
+
+    TL.set(this._container, {
+      width: rect.width,
+      height: rect.height,
+      x: rect.left,
+      y: rect.top,
+      position: 'fixed',
+      overflow: 'hidden'
+    });
+
+    TL.to([this._container, track], 2, {
+      width: windowW,
+      height: '100%',
+      x: windowW / 2,
+      y: 0,
+      xPercent: -50,
+      ease: Expo.easeInOut,
+      clearProps: 'all',
+      className: '-=' + CLASSES.containerClosed,
+      onUpdate: callback.bind(this, track)
+    });
+
+    return TL;
+  };
+
+  /**
+   * Clip image out.
+   * @private
+   */
+  Card.prototype._clipImageOut = function() {
+
+    // Circle.
+    var radius = $(this._clip).attr('r');
+
+    var tween = this._clipImageIn();
+
+    tween.vars.attr.r = radius;
+
+    return tween;
+  };
+
+  /**
+   * Slide content up.
+   * @private
+   */
+  Card.prototype._slideContentUp = function() {
+
+    var tween = TweenLite.to(this._content, 1, {
+      y: 0,
+      clearProps: 'all',
+      ease: Expo.easeInOut
+    });
+
+    return tween;
+  };
+
+  /**
+   * Close card.
+   */
+  Card.prototype.closeCard = function() {
+
+    TweenLite.to(this._container, 0.4, {
+      scrollTo: {
+        y: 0
+      },
+      onComplete: function() {
+        $(this._container).css('overflow', 'hidden');
+      }.bind(this),
+      ease: Power2.easeOut
+    });
+
+    this._TL.eventCallback('onReverseComplete', function() {
+
+      TweenLite.set([this._container, this._content], {
+        clearProps: 'all'
+      });
+
+      $(document.body).removeClass(CLASSES.bodyHidden);
+
+      this.isOpen = false;
+
+    }.bind(this));
+
+    return this._TL.reverse();
+  };
+
+  /**
+   * Hide card, called for all cards except the selected one.
+   */
+  Card.prototype.hideCard = function() {
+
+    var tween = TweenLite.to(this._el, 0.4, {
+      scale: 0.8,
+      autoAlpha: 0,
+      transformOrigin: 'center bottom',
+      ease: Expo.easeInOut
+    });
+
+    return tween;
+  };
+
+  /**
+   * Show card, called for all cards except the selected one.
+   */
+  Card.prototype.showCard = function() {
+
+    var tween = TweenLite.to(this._el, 0.5, {
+      scale: 1,
+      autoAlpha: 1,
+      clearProps: 'all',
+      ease: Expo.easeInOut
+    });
+
+    return tween;
+  };
+
+  return Card;
+
+})(window);
+    </script>
+    <script type="text/javascript">
+        var Spanizer = function() {
+    var t;
+    return {
+        settings: {
+            letters: $(".js-letters"),
+            words: $(".js-words")
+        },
+        init: function() {
+            t = this.settings, this.bindEvents()
+        },
+        bindEvents: function() {
+            Spanizer.letters(), Spanizer.words()
+        },
+        letters: function() {
+            t.letters.html(function(t, n) {
+                var e = $.trim(n).split(""),
+                    i = [];
+                return e.forEach(function(t) {
+                    " " !== t ? i.push("<span>" + t + "</span>") : i.push("<span>&nbsp;</span>")
+                }), i.join("")
+            })
+        },
+        words: function() {
+            t.words.html(function(t, n) {
+                var e = n.split(" "),
+                    i = [];
+                return "<span>" + e.join("</span> <span>") + "</span>"
+            })
+        }
+    }
+}();
+
+// Init Spanizer
+Spanizer.init();
+      </script>
+	<!-- JS -->
+	<script src="js/vendors/trianglify.min.js"></script>
+	<script src="js/vendors/TweenMax.min.js"></script>
+	<script src="js/vendors/ScrollToPlugin.min.js"></script>
+	<script src="js/vendors/cash.min.js"></script>
+	<script src="js/Card-circle.js"></script>
+	<script src="js/demo.js"></script>
+</body>
+
+</html>
+

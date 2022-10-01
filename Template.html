@@ -4,96 +4,211 @@
 <title>Template page</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 body, html {
   height: 100%;
   font-family: "Inconsolata", sans-serif;
 }
 
+/* Create a Parallax Effect */
+.bgimg{
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .bgimg {
   background-position: center;
   background-size: cover;
   background-image: url("Serpent Eagle.jpg");
-  min-height: 75%;
+  min-height: 100%;
 }
 
 .menu {
   display: none;
 }
+
+
+.scrollRow{
+  opacity:1;
+  transform:scale(0.1);
+  transition:all 1s ease-in-out;
+
+}
+
+.appear{
+  opacity: 1;
+  transform: scale(1);
+}
+
+
 </style>
 </head>
 <body class = 'w3-sand'>
 
-<!-- Navbar (sit on top) -->
+<!-- NAVBAR STARTS HERE -->
 <div class="w3-top">
-    <div class="w3-bar w3-black w3-card" id="myNavbar">
-      <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
-      <!-- Right-sided navbar links -->
-      <div class="w3-right w3-hide-small">
-        <a href="#" class="w3-button w3-black">HOME</a>
-        <a href="#about" class="w3-button w3-black">TEAM</a>
-        <a href="#menu" class="w3-button w3-black">PROJECT</a>
-        <a href="#where" class="w3-button w3-black">PARTS</a>
-        <a href="#where" class="w3-button w3-black">SAFETY</a>
-        <a href="#where" class="w3-button w3-black">HUMAN PRACTICES</a>
-        <a href="#where" class="w3-button w3-black">AWARDS</a>
+  <div class="w3-bar w3-black w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="{{ url_for('index') }}" class="w3-bar-item w3-button">HOME</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications">PROJECT</button> <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+          <a href="{{ url_for('pages', page='description') }}" class="w3-bar-item w3-button">DESCRIPTION</a>
+          <a href="#" class="w3-bar-item w3-button">BLUEPRINT</a>
+          <a href="{{ url_for('pages', page='engineering') }}" class="w3-bar-item w3-button">ENGINEERING SUCCESS</a>
+          <a href="#" class="w3-bar-item w3-button">BACKGROUND</a>
+          <a href="{{ url_for('pages', page='implementation') }}" class="w3-bar-item w3-button">IMPLEMENTATION</a>
+          <a href="#" class="w3-bar-item w3-button">CONTRIBUTION</a>
+        </div>
       </div>
-      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-  
-      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-        <i class="fa fa-bars"></i>
-      </a>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications">WETLAB</button> <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+          <a href="{{ url_for('pages', page='proof-of-concept') }}" class="w3-bar-item w3-button">PROOF OF CONCEPT</a>
+          <a href="{{ url_for('pages', page='results') }}" class="w3-bar-item w3-button">DESIGN</a>
+          <a href="{{ url_for('pages', page='parts') }}" class="w3-bar-item w3-button">PARTS</a>
+          <a href="#" class="w3-bar-item w3-button">RESULTS</a>
+          <a href="{{ url_for('pages', page='safety') }}" class="w3-bar-item w3-button">SAFETY</a>
+          <a href="{{ url_for('pages', page='notebook') }}" class="w3-bar-item w3-button">LAB NOTEBOOK</a>
+          <a href="#" class="w3-bar-item w3-button">EXCELLENCE</a>
+        </div>
+      </div>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications"> DRYLAB</button> <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+          <a href="{{ url_for('pages', page='measurement') }}" class="w3-bar-item w3-button">MODEL</a>
+          <a href="{{ url_for('pages', page='inclusivity') }}" class="w3-bar-item w3-button">WEBSITE</a>
+        </div>
+      </div>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications">HUMAN PRACTICES <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+          <a href="#" class="w3-bar-item w3-button">HUMAN PRACTICES</a>
+          <a href="#" class="w3-bar-item w3-button">EDUCATION</a>
+          <a href="{{ url_for('pages', page='communication') }}" class="w3-bar-item w3-button">COMMUNICATION</a>
+          <a href="#" class="w3-bar-item w3-button">INCLUSIVITY</a>
+          <a href="{{ url_for('pages', page='sustainable') }}" class="w3-bar-item w3-button">SUSTAINABLE DEVELOPMENT</a>
+        </div>
+      </div>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications">TEAM <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+          <a href="{{ url_for('pages', page='team') }}" class="w3-bar-item w3-button">MEMBERS</a>
+          <a href="{{ url_for('pages', page='attributions') }}" class="w3-bar-item w3-button">ATTRIBUTIONS</a>
+          <a href="{{ url_for('pages', page='collaborations') }}" class="w3-bar-item w3-button">COLLABORATIONS</a>
+          <a href="{{ url_for('pages', page='partnership') }}" class="w3-bar-item w3-button">PARTNERSHIP</a>
+        </div>
+      </div>
+      <a href="#contact" class="w3-bar-item w3-button">AWARDS</a>
     </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
   </div>
-  
-  <!-- Sidebar on small screens when clicking the menu icon -->
-  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-    <a href="#" onclick="w3_close()" class="w3-button w3-block w3-black">HOME</a>
-    <a href="#about" onclick="w3_close()" class="w3-button w3-block w3-black">TEAM</a>
-    <a href="#menu" onclick="w3_close()" class="w3-button w3-block w3-black">PROJECT</a>
-    <a href="#where" onclick="w3_close()" class="w3-button w3-block w3-black">PARTS</a>
-    <a href="#where" onclick="w3_close()" class="w3-button w3-block w3-black">SAFETY</a>
-    <a href="#where" onclick="w3_close()" class="w3-button w3-block w3-black">HUMAN PRACTICES</a>
-    <a href="#where" onclick="w3_close()" class="w3-button w3-block w3-black">AWARDS</a>
-  </nav>
+</div>
 
-<!-- Header with image -->
-<header class="bgimg w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-    <span class="w3-tag">Open from 6am to 5pm</span>
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <div>
+    <a href="{{ url_for('index') }}" class="w3-bar-item w3-button">HOME</a>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button" title="Notifications">PROJECT</button> <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+        <a href="{{ url_for('pages', page='description') }}" class="w3-bar-item w3-button">DESCRIPTION</a>
+        <a href="#" class="w3-bar-item w3-button">BLUEPRINT</a>
+        <a href="{{ url_for('pages', page='engineering') }}" class="w3-bar-item w3-button">ENGINEERING SUCCESS</a>
+        <a href="#" class="w3-bar-item w3-button">BACKGROUND</a>
+        <a href="{{ url_for('pages', page='implementation') }}" class="w3-bar-item w3-button">IMPLEMENTATION</a>
+        <a href="#" class="w3-bar-item w3-button">CONTRIBUTION</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button" title="Notifications">WETLAB</button> <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+        <a href="{{ url_for('pages', page='proof-of-concept') }}" class="w3-bar-item w3-button">PROOF OF CONCEPT</a>
+        <a href="{{ url_for('pages', page='results') }}" class="w3-bar-item w3-button">DESIGN</a>
+        <a href="{{ url_for('pages', page='parts') }}" class="w3-bar-item w3-button">PARTS</a>
+        <a href="#" class="w3-bar-item w3-button">RESULTS</a>
+        <a href="{{ url_for('pages', page='safety') }}" class="w3-bar-item w3-button">SAFETY</a>
+        <a href="{{ url_for('pages', page='notebook') }}" class="w3-bar-item w3-button">LAB NOTEBOOK</a>
+        <a href="#" class="w3-bar-item w3-button">EXCELLENCE</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button" title="Notifications"> DRYLAB</button> <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+        <a href="{{ url_for('pages', page='measurement') }}" class="w3-bar-item w3-button">MODEL</a>
+        <a href="{{ url_for('pages', page='inclusivity') }}" class="w3-bar-item w3-button">WEBSITE</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button" title="Notifications">HUMAN PRACTICES <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+        <a href="#" class="w3-bar-item w3-button">HUMAN PRACTICES</a>
+        <a href="#" class="w3-bar-item w3-button">EDUCATION</a>
+        <a href="{{ url_for('pages', page='communication') }}" class="w3-bar-item w3-button">COMMUNICATION</a>
+        <a href="#" class="w3-bar-item w3-button">INCLUSIVITY</a>
+        <a href="{{ url_for('pages', page='sustainable') }}" class="w3-bar-item w3-button">SUSTAINABLE DEVELOPMENT</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button" title="Notifications">TEAM <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+        <a href="{{ url_for('pages', page='team') }}" class="w3-bar-item w3-button">MEMBERS</a>
+        <a href="{{ url_for('pages', page='attributions') }}" class="w3-bar-item w3-button">ATTRIBUTIONS</a>
+        <a href="{{ url_for('pages', page='collaborations') }}" class="w3-bar-item w3-button">COLLABORATIONS</a>
+        <a href="{{ url_for('pages', page='partnership') }}" class="w3-bar-item w3-button">PARTNERSHIP</a>
+      </div>
+    </div>
+    <a href="#contact" class="w3-bar-item w3-button">AWARDS</a>
   </div>
-  <div class="w3-display-middle w3-center">
-    <span class="w3-text-white" style="font-size:90px">Template<br>Page</span>
   </div>
-  <div class="w3-display-bottomright w3-center w3-padding-large">
-    <span class="w3-text-white">15 Adr street, 5015</span>
-  </div>
-</header>
+</nav>
 
+<!-- NAVBAR ENDS HERE-->
+
+
+
+
+<div class="bgimg w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <h1 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">TEMPLATE PAGE</span></h1>
+  </div>
+</div>
 <!-- Add a background color and large text to the whole page -->
 <div class="w3-sand w3-grayscale w3-large">
 
 <!-- First Grid -->
 <div class="w3-row-padding w3-container">
     <div>
-        <div class="w3-sidebar w3-sand w3-grayscale w3-bar-block" style="width:25%">
-            <h3 class="w3-bar-item">Index</h3>
+        <div class = 'w3-quarter'>
+          <div class="w3-sidebar w3-sand w3-bar-block" style="width:25%">
+            <h3 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">INDEX</span></h3>
             <a href="#" class="w3-bar-item w3-button">Link 1</a>
             <a href="#" class="w3-bar-item w3-button">Link 2</a>
             <a href="#" class="w3-bar-item w3-button">Link 3</a>
           </div>
+        </div>
+
         <div style="margin-left:25%">	
 
-            <div class="w3-container">
-              <h1>My Page</h1>
+            <div class="w3-container w3-sand ">
+              <h1 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">LOREM IPSUM</span></h1>
             </div>
             
             
             <div class="w3-container">
-            <h2>Sidebar Navigation Example</h2>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum varius duis at consectetur lorem donec massa sapien faucibus. Porttitor rhoncus dolor purus non. Sed blandit libero volutpat sed cras ornare arcu dui. Eu consequat ac felis donec et odio pellentesque diam volutpat. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada. Volutpat blandit aliquam etiam erat velit scelerisque in dictum non. Quam viverra orci sagittis eu. Sagittis purus sit amet volutpat consequat mauris. Consectetur adipiscing elit pellentesque habitant. Posuere lorem ipsum dolor sit amet consectetur. Diam vel quam elementum pulvinar etiam non quam. Mauris augue neque gravida in fermentum et sollicitudin. Urna duis convallis convallis tellus id.
 
 Cum sociis natoque penatibus et magnis dis parturient montes. Faucibus et molestie ac feugiat sed lectus vestibulum. Vitae elementum curabitur vitae nunc sed velit dignissim. Sit amet volutpat consequat mauris nunc congue nisi vitae suscipit. Dui accumsan sit amet nulla facilisi morbi. Auctor eu augue ut lectus arcu bibendum at. Faucibus scelerisque eleifend donec pretium. A cras semper auctor neque vitae tempus quam. Sed adipiscing diam donec adipiscing tristique risus nec feugiat. Ornare massa eget egestas purus viverra accumsan in nisl. Id venenatis a condimentum vitae sapien pellentesque habitant. Egestas diam in arcu cursus euismod quis viverra. Pellentesque habitant morbi tristique senectus.
@@ -114,7 +229,6 @@ Odio eu feugiat pretium nibh ipsum consequat nisl vel pretium. Auctor elit sed v
 
 Tortor posuere ac ut consequat semper viverra. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Placerat in egestas erat imperdiet sed euismod nisi porta. Amet porttitor eget dolor morbi non arcu risus quis varius. Nulla facilisi nullam vehicula ipsum a. Sit amet volutpat consequat mauris nunc congue. Euismod elementum nisi quis eleifend. Est lorem ipsum dolor sit amet consectetur adipiscing. Eget sit amet tellus cras adipiscing enim eu turpis. At erat pellentesque adipiscing commodo elit at imperdiet. Est ante in nibh mauris cursus mattis molestie a. Maecenas volutpat blandit aliquam etiam erat velit scelerisque. Morbi enim nunc faucibus a pellentesque sit. Mi eget mauris pharetra et ultrices neque ornare aenean euismod. At auctor urna nunc id cursus metus aliquam eleifend. Quam vulputate dignissim suspendisse in est ante. Dignissim cras tincidunt lobortis feugiat vivamus at augue. Rutrum quisque non tellus orci ac auctor. Bibendum est ultricies integer quis auctor elit sed vulputate. Magnis dis parturient montes nascetur ridiculus mus mauris.
             
-            </div>
 
     </div>
   </div>
@@ -131,39 +245,60 @@ Tortor posuere ac ut consequat semper viverra. Lectus vestibulum mattis ullamcor
       <i class="fa fa-pinterest-p w3-hover-opacity"></i>
       <i class="fa fa-twitter w3-hover-opacity"></i>
       <i class="fa fa-linkedin w3-hover-opacity"></i>
-   </div>
-   
+
 </footer>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+  </script>
+
+<script>
+  window.addEventListener('scroll',()=>{
+    let content = document.querySelector('.scrollRow');
+    let contentPosition = content.getBoundingClientRect().top;
+    let screenPosition = window.innerHeight;
+    if (contentPosition < screenPosition){
+      content.classList.add('appear');
+    }
+  } );
+  
+  </script>
 
 
 
 <script>
-    // Modal Image Gallery
-    function onClick(element) {
-      document.getElementById("img01").src = element.src;
-      document.getElementById("modal01").style.display = "block";
-      var captionText = document.getElementById("caption");
-      captionText.innerHTML = element.alt;
+  // Modal Image Gallery
+  function onClick(element) {
+    document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    var captionText = document.getElementById("caption");
+    captionText.innerHTML = element.alt;
+  }
+  
+  
+  // Toggle between showing and hiding the sidebar when clicking the menu icon
+  var mySidebar = document.getElementById("mySidebar");
+  
+  function w3_open() {
+    if (mySidebar.style.display === 'block') {
+      mySidebar.style.display = 'none';
+    } else {
+      mySidebar.style.display = 'block';
     }
-    
-    
-    // Toggle between showing and hiding the sidebar when clicking the menu icon
-    var mySidebar = document.getElementById("mySidebar");
-    
-    function w3_open() {
-      if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-      } else {
-        mySidebar.style.display = 'block';
-      }
-    }
-    
-    // Close the sidebar with the close button
-    function w3_close() {
-        mySidebar.style.display = "none";
-    }
-</script>
-
-
+  }
+  
+  // Close the sidebar with the close button
+  function w3_close() {
+      mySidebar.style.display = "none";
+  }
+  </script>
+  
 </body>
 </html>
